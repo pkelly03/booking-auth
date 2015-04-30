@@ -10,11 +10,45 @@ var User = require('../api/user/user.model');
 
 Property.find({}).remove(function() {
   Property.create({
-    name : 'The Charles Stewart',
-    info : '3 star hotel on parnell square.'
+    general: {
+      name: 'The Charles Stewart',
+      addressLine1: '5 Parnell Squart',
+      addressLine2: '',
+      postCode: '15',
+      suburb: 'Dublin',
+      country: 'Ireland',
+      phoneNumber: '00 353 (1) 2912312',
+      altPhoneNumber: '00 353 (1) 2912313',
+      confirmationEmail: 'booking@charlesstewart.ie',
+      confirmationCCEmail: 'info@charlesstewart.ie',
+      enquiryEmail: 'info@charlesstewart.ie',
+      inventoryAlertEmail: 'helen@charlesstewart.ie',
+      currency: 'EUR',
+      timeZone: '',
+      propertyHomePage: 'www.charlesstewart.ie',
+      minimumRoomRate: 29
+    }
   }, {
-    name : 'The Ripley Court Hotel',
-    info : '3 star hotel on talbot street'
+    general: {
+      name: 'The Ripley Court',
+      addressLine1: '22 Talbot Street',
+      addressLine2: '',
+      postCode: '15',
+      suburb: 'Dublin',
+      country: 'Ireland',
+      phoneNumber: '00 353 (1) 391312',
+      altPhoneNumber: '00 353 (1) 3912313',
+      confirmationEmail: 'booking@ripleycourt.com',
+      confirmationCCEmail: 'info@ripleycourt.com',
+      enquiryEmail: 'info@ripleycourt.com',
+      inventoryAlertEmail: 'helen@ripleycourt.com',
+      currency: 'EUR',
+      timeZone: '',
+      propertyHomePage: 'http://www.charlesstewart.ie/',
+      minimumRoomRate: 29
+    }
+  }, function() {
+    console.log('finished populating properties');
   });
 });
 

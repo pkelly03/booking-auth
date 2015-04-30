@@ -3,8 +3,8 @@
 angular.module('bookingAuthApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
-      'title': 'Home',
-      'link': '/'
+      'title': 'Setup',
+      'link': '/setup'
     }];
 
     $scope.isCollapsed = true;

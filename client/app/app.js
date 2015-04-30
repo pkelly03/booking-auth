@@ -5,7 +5,8 @@ angular.module('bookingAuthApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ngLodash'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
