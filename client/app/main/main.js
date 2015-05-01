@@ -7,8 +7,5 @@ angular.module('bookingAuthApp')
         templateUrl: 'app/main/main.html',
         controller: 'MainCtrl'
       })
-      .when('/setup', {
-        templateUrl: 'app/main/setup.html',
-        controller: 'MainSetupCtrl'
-      });
+
   });

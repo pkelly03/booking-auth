@@ -22,7 +22,7 @@ angular.module('bookingAuthApp')
   });
 
 angular.module('bookingAuthApp')
-  .controller('MainSetupCtrl', function ($scope, $http, lodash) {
+  .controller('SetupCtrl', function ($scope, $http, lodash) {
 
     $http.get('/api/properties').success(function(properties) {
       $scope.properties = properties;
