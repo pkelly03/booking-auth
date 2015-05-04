@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bookingAuthApp')
-  .controller('NavbarCtrl', function ($scope, $location, Auth) {
+  .controller('NavbarController', function ($scope, $location, Auth) {
     $scope.menu = [{
       'title': 'Setup',
       'link': '/setup'
