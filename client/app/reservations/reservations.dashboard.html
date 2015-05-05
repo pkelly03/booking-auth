@@ -1,3 +1,101 @@
-<h3>RESERVATIONS</h3>
+<div class="col-sm-9">
+
+  <div class="row reservation">
+
+    <div class="table-responsive">
+      <table class="table reservation-search">
+        <thead>
+        <tr class="info">
+          <th width="15%">Guest name</th>
+          <th width="15%">Booking reference</th>
+          <th width="10%">Date type</th>
+          <th width="10%">Date from</th>
+          <th width="10%">Date to</th>
+          <th width="10%">Status</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><input ng-model="search.name" class="form-control"/></td>
+          <td><input ng-model="search.reference" class="form-control"/></td>
+          <td>
+            <select class="form-control">
+              <option>Check in</option>
+              <option>Booked on</option>
+            </select>
+          </td>
+          <td><input class="form-control datepicker"/></td>
+          <td><input class="form-control datepicker"/></td>
+          <td>
+            <select class="form-control">
+              <option>All</option>
+              <option>Active</option>
+              <option>Canceled</option>
+            </select>
+          </td>
+          <td class="center">
+            <button ng-click="search = {};" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span>
+              Clear Criteria
+            </button>
+          </td>
+        </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table reservation-result">
+
+        <thead>
+        <tr class="danger">
+          <th>Status</th>
+          <th>Name</th>
+          <th>Reference</th>
+          <th>Room Type / Room Rate</th>
+          <th>GTH</th>
+          <th>ETA</th>
+          <th width="2%">Rooms</th>
+          <th width="2%">LOS</th>
+          <th width="6%">Adults / Children / Infants</th>
+          <th width="3%">Check in</th>
+          <th width="3%">Check out</th>
+          <th width="3%">Booked</th>
+          <th>Total</th>
+        </tr>
+        </thead>
+
+        <tbody>
 
 
+        <tr class="warning" ng-if="!reservationData">
+          <td colspan="13"><h3>Currently no reservation information available</h3></td>
+        </tr>
+
+        <tr class="warning" ng-repeat-start="(date, reservations) in reservationData">
+          <td colspan="13"><h5>{{ date | formatDate }}</h5></td>
+        </tr>
+        <tr ng-repeat-end ng-repeat="reservation in reservations | filter:search">
+          <td class="center"><span class="reservation-status-icon glyphicon glyphicon-ok-sign" aria-hidden="true"
+                                   ngTitle="{{reservation.status}}"></span></td>
+          <td>{{reservation.name}}</td>
+          <td>{{reservation.reference}}</td>
+          <td>{{reservation.type}}</td>
+          <td>{{reservation.GTD}}</td>
+          <td>{{reservation.ETA}}</td>
+          <td class="center">{{reservation.rooms}}</td>
+          <td class="center">{{reservation.LOS}}</td>
+          <td class="center">{{reservation.adults + "/" + reservation.children + "/" + reservation.infants}}</td>
+          <td>{{reservation.checkin | shortDateString}}</td>
+          <td>{{reservation.checkout | shortDateString}}</td>
+          <td>{{reservation.booked | shortDateString}}</td>
+          <td>€{{reservation.total}}</td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
