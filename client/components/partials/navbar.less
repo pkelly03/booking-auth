@@ -1,0 +1,27 @@
+.navbar-wrapper {
+  margin-top: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+
+  .navbar {
+    background-color: @menu-bar-background;
+    .navbar-nav {
+      > li {
+        .active {
+          background-color: #23b7e5;
+        }
+        > a {
+          line-height: 21px;
+          color: @menu-item;
+        }
+      }
+      > .open > a {
+        color: @menu-item;
+        background-color: #23b7e5;
+      }
+    }
+
+  }
+
+}
+

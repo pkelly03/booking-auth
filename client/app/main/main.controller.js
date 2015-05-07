@@ -1,24 +1,15 @@
 'use strict';
 
 angular.module('bookingAuthApp')
-  .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [];
+  .controller('MainCtrl', function ($scope, $http, $location, Auth) {
+    if (!Auth.isLoggedIn()) {
+      console.log("Not logged in, redirecting to login screen");
+      $location.path('/login');
+    }
 
-    $http.get('/api/properties').success(function(properties) {
-      $scope.properties = properties;
-    });
+    $scope.isLoggedIn = Auth.isLoggedIn;
+    $scope.getCurrentUser = Auth.getCurrentUser;
 
-    $scope.addProperty = function() {
-      if($scope.property === '') {
-        return;
-      }
-      $http.post('/api/properties', { name: $scope.property });
-      $scope.property = '';
-    };
-
-    $scope.deleteProperty = function(thing) {
-      $http.delete('/api/properties/' + thing._id);
-    };
   });
 
 angular.module('bookingAuthApp')

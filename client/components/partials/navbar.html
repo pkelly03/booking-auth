@@ -15,15 +15,14 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Property<span class="caret"></span></a>
+          <a ng-show="isLoggedIn()" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Property<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/property')}"><a href="/property" ng-click="viewProperty()">The Charles Stewart</a></li>
-            <li><a href="#">The Ripley Court</a></li>
+            <li ng-show="isLoggedIn()" ng-class="{active: isActive('/property')}"><a href="/property" ng-click="viewProperty()">The Charles Stewart</a></li>
+            <li ng-show="isLoggedIn()" ><a href="#">The Ripley Court</a></li>
           </ul>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        c
         <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}"><a href="/login">Login</a></li>
         <li ng-show="isLoggedIn()"><p class="navbar-text">Hello {{ getCurrentUser().name }}</p> </li>
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><a href="/settings"><span class="glyphicon glyphicon-cog"></span></a></li>

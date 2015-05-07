@@ -1,0 +1,21 @@
+.sidebar {
+  .nav {
+    > li {
+      > a {
+        color: @side-bar-color;
+        &:hover, &:focus {
+          color: @side-bar-color-hover;
+          background-color: @menu-item-focus;
+        }
+      }
+    }
+  }
+
+  a {
+    color: @side-bar-color;
+    &:hover {
+      color: @side-bar-color-hover;
+      text-decoration: none;
+    }
+  }
+}

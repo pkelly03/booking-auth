@@ -2,7 +2,17 @@
 
 <div class="container-fluid">
   <div class="row">
-      This is a tester..
+    <div class="col-sm-3"></div>
+    <div class="col-sm-9">
+      <div ng-hide="isLoggedIn()">
+        Welcome to bookmyroom. To get started you will need to register with the portal.
+
+      </div>
+      <div ng-show="isLoggedIn()">
+        Hello {{ getCurrentUser().name }}, welcome to bookmyroom. Select your property from the drop down menu.
+
+      </div>
+    </div>
   </div>
 </div>
 

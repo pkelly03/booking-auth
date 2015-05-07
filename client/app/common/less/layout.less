@@ -5,46 +5,4 @@ body {
   color: @brand-info;
 }
 
-.navbar-wrapper {
-  margin-top: 10px;
-  margin-left: 30px;
-  margin-right: 30px;
 
-  .navbar {
-    background-color: @menu-bar-background;
-    .navbar-nav {
-      > li {
-        .active {
-          background-color: #23b7e5;
-        }
-        > a {
-          line-height: 21px;
-          color: @menu-item;
-        }
-      }
-    }
-
-  }
-}
-
-.sidebar {
-  .nav {
-    > li {
-      > a {
-        color: @side-bar-color;
-        &:hover, &:focus {
-          color: @side-bar-color-hover;
-          background-color: @menu-item-focus;
-        }
-      }
-    }
-  }
-
-  a {
-    color: @side-bar-color;
-    &:hover {
-      color: @side-bar-color-hover;
-      text-decoration: none;
-    }
-  }
-}
