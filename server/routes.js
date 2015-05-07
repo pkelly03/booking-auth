@@ -9,6 +9,7 @@ var errors = require('./components/errors');
 module.exports = function(app) {
 
   // Insert routes below
+  app.use('/api/reservations', require('./api/reservation'));
   app.use('/api/properties', require('./api/property'));
   app.use('/api/users', require('./api/user'));
 

@@ -3,8 +3,7 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-var ReservationSchema = new Schema({
-  general: {
+var ReservationDetailsSchema = new Schema({
     status: String,
     name: String,
     reference: String,
@@ -21,7 +20,12 @@ var ReservationSchema = new Schema({
     checkout: Date,
     booked: Date,
     total: Number
-  }
 });
 
-module.exports = mongoose.model('Property', ReservationSchema);
+var ReservationSchema = new Schema({
+  propertyId: String,
+  reservations: [ReservationDetailsSchema]
+})
+
+
+module.exports = mongoose.model('Reservation', ReservationSchema);

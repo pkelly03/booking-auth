@@ -73,7 +73,8 @@ User.find({}).remove(function() {
 
 Reservation.find({}).remove(function() {
   Reservation.create({
-    "1429832824736": [
+    "propertyId": "3423422",
+    "reservations": [
       {
         "status": "success",
         "name": "Martin",
@@ -95,44 +96,6 @@ Reservation.find({}).remove(function() {
       {
         "status": "success",
         "name": "Washinton",
-        "reference": "BB1502111024415",
-        "type": "Single Room Bed & Breakfast",
-        "rate": "Single Room Bed & Breakfast",
-        "GTD": "Yes",
-        "ETA": "06:00 pm",
-        "rooms": "1",
-        "LOS": "2",
-        "adults": "2",
-        "children": "1",
-        "infants": "0",
-        "checkin": 1429327444934,
-        "checkout": 1429327444934,
-        "booked": 1429327444934,
-        "total": 160
-      }
-    ],
-    "1429836823736": [
-      {
-        "status": "success",
-        "name": "Fletcher, Keith",
-        "reference": "BB1502111024414",
-        "type": "Double Room 2 Night B&B",
-        "rate": "Double Room 2 Night B&B",
-        "GTD": "Yes",
-        "ETA": "06:00 pm",
-        "rooms": "1",
-        "LOS": "2",
-        "adults": "2",
-        "children": "1",
-        "infants": "0",
-        "checkin": 1429327444934,
-        "checkout": 1429327444934,
-        "booked": 1429327444934,
-        "total": 160
-      },
-      {
-        "status": "success",
-        "name": "Paul Kelly",
         "reference": "BB1502111024415",
         "type": "Single Room Bed & Breakfast",
         "rate": "Single Room Bed & Breakfast",
