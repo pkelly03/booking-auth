@@ -69,13 +69,13 @@
         <tbody>
 
 
-        <tr class="warning" ng-if="!reservationData">
+        <tr class="warning" ng-if="!reservations">
           <td colspan="13"><h3>Currently no reservation information available</h3></td>
         </tr>
 
-        <tr class="warning" ng-repeat-start="(date, reservations) in reservationData">
-          <td colspan="13"><h5>{{ date | formatDate }}</h5></td>
-        </tr>
+        <!--<tr class="warning" ng-repeat-start="(date, reservations) in reservations">-->
+          <!--<td colspan="13"><h5>{{ date | formatDate }}</h5></td>-->
+        <!--</tr>-->
         <tr ng-repeat-end ng-repeat="reservation in reservations | filter:search">
           <td class="center"><span class="reservation-status-icon glyphicon glyphicon-ok-sign" aria-hidden="true"
                                    ngTitle="{{reservation.status}}"></span></td>
@@ -87,9 +87,9 @@
           <td class="center">{{reservation.rooms}}</td>
           <td class="center">{{reservation.LOS}}</td>
           <td class="center">{{reservation.adults + "/" + reservation.children + "/" + reservation.infants}}</td>
-          <td>{{reservation.checkin | shortDateString}}</td>
-          <td>{{reservation.checkout | shortDateString}}</td>
-          <td>{{reservation.booked | shortDateString}}</td>
+          <!--<td>{{reservation.checkin | shortDateString}}</td>-->
+          <!--<td>{{reservation.checkout | shortDateString}}</td>-->
+          <!--<td>{{reservation.booked | shortDateString}}</td>-->
           <td>€{{reservation.total}}</td>
         </tr>
 
